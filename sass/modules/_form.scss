@@ -1,0 +1,27 @@
+.form {
+  &__group {
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  &__labels {
+    color: $gray;
+    @include font-size(13px);
+    vertical-align: bottom;
+  }
+  &__inputs {
+    float: right;
+    color: $gray;
+    @include font-size(13px);
+    width: 100%;
+    max-width: 280px;
+    border: none;
+    border-bottom: 1px solid $gray-border-form;
+    &:focus {
+      outline: none;
+      border-bottom: 1.5px solid $blue-aqua;
+    }
+    @media(max-width: 555px) {
+      margin: 20px 0 35px;
+    } 
+  }
+}

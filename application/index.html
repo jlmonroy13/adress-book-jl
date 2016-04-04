@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Address-Book</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/main.css" />
+</head> 
+<body>
+  <!-- Search header -->
+  <header class="main-header">
+    <div class="container">
+      <h1 class="main-header__title">Koombea Contacts</h1>
+      <input class="main-header__search" type="text" placeholder="Buscar..." />
+    </div>
+  </header>
+  <div class="container--small">
+    <!-- Favorite section -->
+    <section>
+      <h1 class="table__title">Favoritos</h1>
+      <div class="table__responsive">
+        <table class="table">
+          <tbody class="js-favoriteslist">
+          </tbody>  
+        </table>
+      </div>  
+    </section><!-- END Favorite section -->  
+    <!-- All Contacts section -->
+    <section>
+      <h1 class="table__title">Todos</h1>
+      <div class="table__responsive">
+        <table class="table">
+          <tbody class="js-contactslist">
+          </tbody>  
+        </table>
+      </div>   
+    </section> <!-- END All Contacts section -->
+    <!-- Add Button --> 
+    <a class="button-circle button-circle--position js-add-contact-btn" href="#modal">+</a>
+    <!-- Contact Modal --> 
+    <div class="modal js-modal" id="modal">
+      <div class="modal-content">
+        <div class="grid">
+          <div class="grid__item one-third palm--one-whole lap--one-whole">
+            <div class="user-main-info">
+              <img src="images/user-photo.png" alt="User Photo" class="user-main-info__photo">
+              <h1 class="user-main-info__title">Nombre del Contacto</h1>
+              <a href="#" class="button-primary">AGREGAR A FAVORITOS</a>
+            </div>
+          </div><!-- 
+           --><div class="grid__item two-thirds palm--one-whole lap--one-whole">
+            <div class="user-info">
+              <h1 class="user-info__title">Contacto</h1>
+              <form class="form">
+                <div class="form__group">
+                  <label class="form__labels margin-left" for="name">Nombre</label><input class="js-name form__inputs" id="name" type="text" required/>
+                </div> 
+                <div class="form__group">
+                  <label class="form__labels" for="twitter"><span class="margin-right icon-twitter icon-twitter--color icon-twitter--size"></span>Twitter</label><input class="js-twitter form__inputs" id="twitter" type="text" required/>
+                </div>  
+                <div class="form__group">
+                  <label class="form__labels" for="email"><span class="margin-right icon-email icon-email--color icon-email--size"></span>Email</label><input class="js-email form__inputs" id="email" type="email" required/>
+                </div>  
+                <div class="form__group">
+                  <label class="form__labels" for="phone"><span class="margin-right icon-phone icon-phone--color icon-phone--size"></span>Telefono</label><input class="js-phone form__inputs" id="phone" type="text" required/>
+                </div>
+                <div class="form__group">
+                  <label class="form__labels margin-left" for="address">Dirección</label><input class="js-address form__inputs" id="address" type="text" />
+                </div>
+                <div class="button-group">
+                  <a href="#" class="button-default margin-right--medium">CANCELAR</a>
+                  <button class="js-form-btn button-primary">GUARDAR</button>
+                </div>  
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- END Contact Modal -->
+  </div>
+  <script src="javascript/vendor/bundle.js"></script>
+  <script src="javascript/createContact.js"></script>
+  <script src="javascript/app.js"></script>
+
+
+<!--   <script src="javascript/new-contact.js"></script>
+  <script src="javascript/contact.js"></script>
+  <script src="javascript/contact-list.js"></script>
+  <script src="javascript/add-favorite.js"></script>
+  <script src="javascript/application.js"></script> -->
+</body>
+</html>

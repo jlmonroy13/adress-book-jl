@@ -1,0 +1,32 @@
+.icon-twitter--color {
+  color: $blue-twitter;
+}
+.icon-email--color, .icon-phone--color {
+  color: $gray-icon;
+}
+.icon-star--color {
+  color: $gray-icon;
+  &:hover {
+    color: $yellow-favorite;
+  }
+}
+.icon-star--favorite {
+  color: $yellow-favorite;
+  &:hover {
+    color: $gray-icon;
+  }
+}
+.icon-email--size, 
+.icon-phone--size,
+.icon-twitter--size,
+.icon-star--size {
+  @include font-size(16px);
+  vertical-align: middle;
+}
+.user-image {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  background: url('../images/user-photo-mini.png') no-repeat;
+  vertical-align: middle;
+}

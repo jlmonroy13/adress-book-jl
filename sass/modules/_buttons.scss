@@ -1,0 +1,65 @@
+.button-circle {
+  background-color: $blue-aqua;
+  color: $white;
+  border-radius: 50%;
+  height: 50px;  
+  width: 50px;
+  display: inline-block;
+  @include font-size(35px);
+  text-align: center;
+  -webkit-box-shadow: 0px 6px 28px -8px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 6px 28px -8px rgba(0,0,0,0.75);
+  box-shadow: 0px 6px 28px -8px rgba(0,0,0,0.75);
+  transition: 0.3s;
+  &--position {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
+  &:hover {
+    background-color: $blue-hover;
+  }
+} 
+
+.button-default {
+  color: $white;
+  -webkit-box-shadow: 0px 6px 18px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 6px 18px -4px rgba(0,0,0,0.75);
+  box-shadow: 0px 6px 18px -4px rgba(0,0,0,0.75);
+  @include font-size(13px);
+  font-weight: 300;
+  padding: 0.7142em 1.4285em;
+  background-color: $gray-button;
+  margin-bottom: 30px;
+  transition: 0.3s;
+  &:hover {
+    background-color: $gray-hover;
+  }
+  @media(max-width: 420px) {
+    margin-right: 0 !important;
+  } 
+}
+
+.button-primary {
+  color: $white;
+  -webkit-box-shadow: 0px 6px 18px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 6px 18px -4px rgba(0,0,0,0.75);
+  box-shadow: 0px 6px 18px -4px rgba(0,0,0,0.75);
+  @include font-size(13px);
+  font-weight: 300;
+  padding: 0.7142em 1.4285em;
+  background-color: $blue-aqua;
+  border: none;
+  margin-bottom: 30px;
+  transition: 0.3s;
+  &:hover {
+    background-color: $blue-hover;
+  }
+}
+
+.button-group {
+  position: absolute;
+  right: 0;
+  bottom: -110px;
+  margin-bottom: 10px; 
+}
