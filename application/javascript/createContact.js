@@ -30,47 +30,43 @@ function createContact(event, contacts) {
     $address.val("");
 
     //Creating string contact to render to html
+      //Handlebars
+      var template = Handlebars.compile($('#contact-template').html());
     (function stringContact(contact) {
-      htmlString=   '<tr class="js-row">';
-      htmlString += '<td class="table__data table__data--color">';
-      htmlString += '<span class="margin-right user-image"></span>'+contact.name+'</td>';
-      htmlString += '<td class="table__data">';
-      htmlString += '<span class="margin-right icon-twitter icon-twitter--color icon-twitter--size"></span>';
-      htmlString += contact.twitter+'</td>';
-      htmlString += '<td class="table__data">';
-      htmlString += '<span class="margin-right icon-email icon-email--color icon-email--size"></span>';
-      htmlString += contact.email+'</td>';
-      htmlString += '<td class="table__data">';
-      htmlString += '<span class="margin-right icon-phone icon-phone--color icon-phone--size"></span>';
-      htmlString += contact.phone+'</td>';
-      htmlString += '<td class="table__data">';
-      htmlString += '<a href="#" class="js-favorite-btn"><span class="margin-right icon-star icon-star--size';
-      htmlString += ' icon-star--color"></span></a></td>';
-      htmlString += '</tr>';
-      contact.$node = $(htmlString);
+      contact.$node = $(template(contact));
+    })(contact);
+
+    //Clone contact and add it to the object
+    (function cloneContact(contact) {
+      contact.$clone = contact.$node.clone(true);
+      contact.$clone.find('.icon-star').removeClass('icon-star--color').addClass('icon-star--favorite');
+      contact.$clone.addClass('js-row-favorite');
     })(contact);
 
     //ADD TO FAVORITE FUNCTION 
     (function favoriteContact() {
-      var $favoriteButton = contact.$node.find('.js-favorite-btn');
-      var index;
-      $favoriteButton.click(function() {
+      var $favoriteButtonAll = contact.$node.find('.js-favorite-btn');
+      var $favoriteButton = contact.$clone.find('.js-favorite-btn');
+      //When you click favorite button in all contacts list
+      $favoriteButtonAll.click(function() {
+        var $starIconfavorite = contact.$clone.find('.icon-star');
         var $starIcon = $(this).find('.icon-star');
         if($starIcon.hasClass('icon-star--color')) {
-          $starIcon.removeClass('icon-star--color');
-          $starIcon.addClass('icon-star--favorite');
-          $('.js-favoriteslist').append(contact.$node);
+          $starIcon.removeClass('icon-star--color').addClass('icon-star--favorite');
+          contact.$clone.appendTo('.js-favoriteslist');
         }else {
-          $starIcon.removeClass('icon-star--favorite');
-          $starIcon.addClass('icon-star--color');
-          $('.js-contactslist').append(contact.$node);
+          $starIcon.removeClass('icon-star--favorite').addClass('icon-star--color');
+          contact.$clone.remove();
         }
-        index = contacts.indexOf(contact);
-        console.log(contacts);
+        //When you click favorite button in favorite contacts list
+        $favoriteButton.click(function() {
+          contact.$node.find('.icon-star').removeClass('icon-star--favorite').addClass('icon-star--color');
+          $(this).parents('.js-row').remove();
+        });
       });
     })();
 
-    //ADD CONTACT TO "TODOS LIST"
+    //ADD CONTACT TO "ALL CONTACTS LIST"
     $('.js-contactslist').append(contact.$node);
 
     //ADD CONTACTS TO ARRAY

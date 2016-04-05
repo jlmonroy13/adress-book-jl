@@ -79,14 +79,30 @@
     </div><!-- END Contact Modal -->
   </div>
   <script src="javascript/vendor/bundle.js"></script>
+  <script id="contact-template" type="text/template">
+    <tr class="js-row">
+      <td class="table__data table__data--color">
+        <span class="margin-right user-image"></span>{{name}}
+      </td>
+      <td class="table__data">
+        <span class="margin-right icon-twitter icon-twitter--color icon-twitter--size"></span>{{twitter}}
+      </td>
+      <td class="table__data">
+        <span class="margin-right icon-email icon-email--color icon-email--size"></span>{{email}}
+      </td>
+      <td class="table__data">  
+        <span class="margin-right icon-phone icon-phone--color icon-phone--size"></span>{{phone}}
+      </td>
+      <td class="table__data">
+        <a href="#" class="js-favorite-btn">
+          <span class="margin-right icon-star icon-star--size icon-star--color"></span>
+        </a>
+      </td>
+    </tr>      
+  </script>
   <script src="javascript/createContact.js"></script>
   <script src="javascript/app.js"></script>
 
 
-<!--   <script src="javascript/new-contact.js"></script>
-  <script src="javascript/contact.js"></script>
-  <script src="javascript/contact-list.js"></script>
-  <script src="javascript/add-favorite.js"></script>
-  <script src="javascript/application.js"></script> -->
 </body>
 </html>
