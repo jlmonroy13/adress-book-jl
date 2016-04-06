@@ -51,7 +51,7 @@
            --><div class="grid__item two-thirds palm--one-whole lap--one-whole">
             <div class="user-info">
               <h1 class="user-info__title">Contacto</h1>
-              <form class="form">
+              <form class="form" id="js-form">
                 <div class="form__group">
                   <label class="form__labels margin-left" for="name">Nombre</label><input class="js-name form__inputs" id="name" type="text" required/>
                 </div> 
@@ -79,7 +79,7 @@
     </div><!-- END Contact Modal -->
   </div>
   <script src="javascript/vendor/bundle.js"></script>
-  <script id="contact-template" type="text/template">
+  <script id="contact-template" type="text/template"> <!-- Handlebar Template -->
     <tr class="js-row">
       <td class="table__data table__data--color">
         <span class="margin-right user-image"></span>{{name}}
